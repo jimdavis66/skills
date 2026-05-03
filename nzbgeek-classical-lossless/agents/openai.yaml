@@ -1,0 +1,7 @@
+interface:
+  display_name: "NZBGeek Classical Lossless"
+  short_description: "Scan NZBGeek for fresh classical lossless posts"
+  default_prompt: "Use $nzbgeek-classical-lossless to find likely classical releases posted to NZBGeek Audio/Lossless in the last 24 hours."
+
+policy:
+  allow_implicit_invocation: true
