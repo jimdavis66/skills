@@ -1,5 +1,5 @@
 ---
-name: homelab-otel-loki-review
+name: homelab-loki-host-log-audit
 description: >-
   Reviews homelab host logs shipped by OpenTelemetry Collector to Grafana Loki
   using LogQL on {service_name="otel-collector"}. Covers security-relevant
@@ -10,7 +10,7 @@ description: >-
   structured log review workflow.
 ---
 
-# Homelab OTel → Loki log review
+# Homelab Loki Host Log Audit
 
 Host logs from this repository’s OpenTelemetry stack land in Loki with the OTLP-derived label **`service_name="otel-collector"`**. Journal fields (e.g. `_HOSTNAME`, `MESSAGE`, `_SYSTEMD_UNIT`, `PRIORITY`) usually appear in the **log line** (often JSON) or structured metadata, not always as stream labels.
 

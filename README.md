@@ -12,7 +12,7 @@ development notes.
 
 | Skill | Purpose |
 | --- | --- |
-| [`homelab-otel-loki-review`](homelab-otel-loki-review/) | Review homelab host logs shipped through OpenTelemetry Collector to Grafana Loki. Includes LogQL patterns for host coverage, security review, operational issues, correlation, and findings reports. |
+| [`homelab-loki-host-log-audit`](homelab-loki-host-log-audit/) | Review homelab host logs shipped through OpenTelemetry Collector to Grafana Loki. Includes LogQL patterns for host coverage, security review, operational issues, correlation, and findings reports. |
 | [`nzbgeek-classical-lossless`](nzbgeek-classical-lossless/) | Scan NZBGeek `Audio > Lossless` category `3040` for likely classical releases from the last 24 hours. Includes Python scripts for filtering results, optional OpenAI classification, Discogs matching, and optional SABnzbd delivery. |
 
 ## Using a Skill
@@ -20,7 +20,7 @@ development notes.
 Install or expose the relevant skill directory to an agent runtime that supports
 skills, then ask for the workflow described by that skill. For example:
 
-- Ask for a homelab Loki log review to trigger `homelab-otel-loki-review`.
+- Ask for a homelab Loki host log audit to trigger `homelab-loki-host-log-audit`.
 - Ask for a current NZBGeek classical lossless scan to trigger `nzbgeek-classical-lossless`.
 
 ## Adding a Skill

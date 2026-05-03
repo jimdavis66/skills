@@ -1,4 +1,4 @@
-# homelab-otel-loki-review
+# homelab-loki-host-log-audit
 
 An AI skill for reviewing homelab host logs shipped through OpenTelemetry Collector to Grafana Loki.
 
