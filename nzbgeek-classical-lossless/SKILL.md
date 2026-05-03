@@ -1,11 +1,19 @@
 ---
 name: nzbgeek-classical-lossless
-description: Check NZBGeek Audio/Lossless category 3040 for posts from the last 24 hours using the NZB_GEEK_API_KEY environment variable, filter for likely classical music releases, exclude obvious junk or misfiled video posts, and return concise match lines with NZBGeek result links, direct NZB URLs, and strong Discogs release links when available. If the user explicitly asks to send one result to SABnzbd, use the reported NZB URL with scripts/send_to_sabnzbd.py plus SABNZBD_URL and SABNZBD_API_KEY. Use this when the user wants a current NZBGeek classical-lossless scan or a terse classical release roundup from the last day.
+description: Check NZBGeek Audio/Lossless category 3040 for posts from the last 24 hours, filter for likely classical music releases, exclude obvious junk or misfiled video posts, and return concise match lines with NZBGeek result links, direct NZB URLs, and strong Discogs release links when available. If the user explicitly asks to send one result to SABnzbd, use the reported NZB URL with scripts/send_to_sabnzbd.py plus SABNZBD_URL and SABNZBD_API_KEY. Use this when the user wants a current NZBGeek classical-lossless scan or a terse classical release roundup from the last day.
 ---
 
 # NZBGeek Classical Lossless
 
 Use this skill when the user wants a fresh scan of NZBGeek category `3040` (`Audio > Lossless`) for likely classical releases from the last 24 hours.
+
+## Requirements
+
+- Python 3
+- `NZB_GEEK_API_KEY` is required for scanning NZBGeek.
+- `OPENAI_API_KEY` is optional and enables extra classification through the OpenAI Responses API.
+- `OPENAI_MODEL` is optional and overrides the script default model.
+- `SABNZBD_URL` and `SABNZBD_API_KEY` are only required when sending a chosen result to SABnzbd.
 
 ## Workflow
 

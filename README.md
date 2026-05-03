@@ -21,8 +21,7 @@ Install or expose the relevant skill directory to an agent runtime that supports
 skills, then ask for the workflow described by that skill. For example:
 
 - Ask for a homelab Loki log review to trigger `homelab-otel-loki-review`.
-- Ask for a current NZBGeek classical lossless scan to trigger
-  `nzbgeek-classical-lossless`.
+- Ask for a current NZBGeek classical lossless scan to trigger `nzbgeek-classical-lossless`.
 
 ## Adding a Skill
 
