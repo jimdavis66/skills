@@ -4,24 +4,24 @@ This repository contains personal AI agent skills: small, self-contained
 instruction packages that teach an assistant how to perform a specific workflow
 with the right context, commands, output shape, and guardrails.
 
-Each skill lives in its own directory and is centered on a `SKILL.md` file. Some
-skills also include helper scripts, README files, agent metadata, or local
-development notes.
+Each skill lives under `skills/` in its own directory and is centered on a
+`SKILL.md` file. Some skills also include helper scripts, README files, agent
+metadata, or local development notes.
 
 ## Repository Contents
 
 | Skill | Purpose |
 | --- | --- |
-| [`homelab-container-metrics-audit`](homelab-container-metrics-audit/) | Audit homelab container resource health using Grafana Prometheus cAdvisor metrics. Includes cAdvisor coverage, CPU, memory/OOM, filesystem/inode, I/O, network, process/thread/file descriptor, PSI pressure checks, thresholds, and intervention-focused reporting. |
-| [`homelab-host-metrics-audit`](homelab-host-metrics-audit/) | Audit homelab host resource health using Grafana Prometheus metrics. Includes discovery, coverage checks, CPU/load, memory/swap, filesystem/inode, disk I/O, network, reboot, hardware/storage-health checks, thresholds, and intervention-focused reporting. |
-| [`homelab-loki-container-log-audit`](homelab-loki-container-log-audit/) | Audit homelab container logs in Grafana Loki. Includes LogQL patterns for security-related application events, suspicious requests, secrets, runtime abuse signals, application errors, dependency failures, and findings reports. |
-| [`homelab-loki-host-log-audit`](homelab-loki-host-log-audit/) | Review homelab host logs shipped through OpenTelemetry Collector to Grafana Loki. Includes LogQL patterns for host coverage, security review, operational issues, correlation, and findings reports. |
-| [`nzbgeek-classical-lossless`](nzbgeek-classical-lossless/) | Scan NZBGeek `Audio > Lossless` category `3040` for likely classical releases from the last 24 hours. Includes Python scripts for filtering results, optional OpenAI classification, Discogs matching, and optional SABnzbd delivery. |
+| [`homelab-container-metrics-audit`](skills/homelab-container-metrics-audit/) | Audit homelab container resource health using Grafana Prometheus cAdvisor metrics. Includes cAdvisor coverage, CPU, memory/OOM, filesystem/inode, I/O, network, process/thread/file descriptor, PSI pressure checks, thresholds, and intervention-focused reporting. |
+| [`homelab-host-metrics-audit`](skills/homelab-host-metrics-audit/) | Audit homelab host resource health using Grafana Prometheus metrics. Includes discovery, coverage checks, CPU/load, memory/swap, filesystem/inode, disk I/O, network, reboot, hardware/storage-health checks, thresholds, and intervention-focused reporting. |
+| [`homelab-loki-container-log-audit`](skills/homelab-loki-container-log-audit/) | Audit homelab container logs in Grafana Loki. Includes LogQL patterns for security-related application events, suspicious requests, secrets, runtime abuse signals, application errors, dependency failures, and findings reports. |
+| [`homelab-loki-host-log-audit`](skills/homelab-loki-host-log-audit/) | Review homelab host logs shipped through OpenTelemetry Collector to Grafana Loki. Includes LogQL patterns for host coverage, security review, operational issues, correlation, and findings reports. |
+| [`nzbgeek-classical-lossless`](skills/nzbgeek-classical-lossless/) | Scan NZBGeek `Audio > Lossless` category `3040` for likely classical releases from the last 24 hours. Includes Python scripts for filtering results, optional OpenAI classification, Discogs matching, and optional SABnzbd delivery. |
 
 ## Using a Skill
 
-Install or expose the relevant skill directory to an agent runtime that supports
-skills, then ask for the workflow described by that skill. For example:
+Install or expose the relevant directory under `skills/` to an agent runtime
+that supports skills, then ask for the workflow described by that skill. For example:
 
 - Ask for a homelab Loki host log audit to trigger `homelab-loki-host-log-audit`.
 - Ask for a homelab Loki container log audit to trigger `homelab-loki-container-log-audit`.
@@ -31,10 +31,10 @@ skills, then ask for the workflow described by that skill. For example:
 
 ## Adding a Skill
 
-Create a new directory with at least:
+Create a new directory under `skills/` with at least:
 
 ```text
-new-skill-name/
+skills/new-skill-name/
 └── SKILL.md
 ```
 
