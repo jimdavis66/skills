@@ -224,6 +224,34 @@ def request_openai_response(api_key: str, payload: dict[str, Any]) -> Any:
         return json.loads(response.read().decode("utf-8"))
 
 
+def summarize_http_error(exc: urllib.error.HTTPError) -> str:
+    message = f"HTTP Error {exc.code}: {exc.reason}"
+    try:
+        body = exc.read().decode("utf-8", errors="replace").strip()
+    except Exception:
+        return message
+    if not body:
+        return message
+
+    try:
+        payload = json.loads(body)
+    except json.JSONDecodeError:
+        return f"{message}: {body[:500]}"
+
+    error = payload.get("error") if isinstance(payload, dict) else None
+    if not isinstance(error, dict):
+        return f"{message}: {body[:500]}"
+
+    details = []
+    for key in ("message", "type", "param", "code"):
+        value = error.get(key)
+        if value:
+            details.append(f"{key}={value}")
+    if not details:
+        return f"{message}: {body[:500]}"
+    return f"{message}: " + "; ".join(details)
+
+
 def parse_pubdate(value: str | None) -> datetime | None:
     if not value:
         return None
@@ -706,7 +734,10 @@ def main() -> int:
                 openai_api_key,
                 openai_model,
             )
-        except (urllib.error.URLError, urllib.error.HTTPError, json.JSONDecodeError, TimeoutError, ValueError) as exc:
+        except urllib.error.HTTPError as exc:
+            llm_failed = True
+            print(f"OpenAI review failed, falling back to heuristics: {summarize_http_error(exc)}", file=sys.stderr)
+        except (urllib.error.URLError, json.JSONDecodeError, TimeoutError, ValueError) as exc:
             llm_failed = True
             print(f"OpenAI review failed, falling back to heuristics: {exc}", file=sys.stderr)
 
