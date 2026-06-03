@@ -1,0 +1,4 @@
+interface:
+  display_name: "SWSD Comment Style"
+  short_description: "Draft SWSD comments in James style"
+  default_prompt: "Use $swsd-comment-style to draft a Service Desk incident comment in my usual style."

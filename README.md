@@ -17,6 +17,7 @@ metadata, or local development notes.
 | [`homelab-loki-container-log-audit`](skills/homelab-loki-container-log-audit/) | Audit homelab container logs in Grafana Loki. Includes LogQL patterns for security-related application events, suspicious requests, secrets, runtime abuse signals, application errors, dependency failures, and findings reports. |
 | [`homelab-loki-host-log-audit`](skills/homelab-loki-host-log-audit/) | Review homelab host logs shipped through OpenTelemetry Collector to Grafana Loki. Includes LogQL patterns for host coverage, security review, operational issues, correlation, and findings reports. |
 | [`nzbgeek-classical-lossless`](skills/nzbgeek-classical-lossless/) | Scan NZBGeek `Audio > Lossless` category `3040` for likely classical releases from the last 24 hours. Includes Python scripts for filtering results, optional OpenAI classification, Discogs matching, and optional SABnzbd delivery. |
+| [`swsd-comment-style`](skills/swsd-comment-style/) | Draft or post SolarWinds Service Desk incident comments in a practical school ICT support tone. Includes ticket context gathering, public vs private notes, voice and style rules, and draft-before-post guardrails. |
 
 ## Using a Skill
 
@@ -28,6 +29,7 @@ that supports skills, then ask for the workflow described by that skill. For exa
 - Ask for a homelab host metrics audit to trigger `homelab-host-metrics-audit`.
 - Ask for a homelab container metrics audit to trigger `homelab-container-metrics-audit`.
 - Ask for a current NZBGeek classical lossless scan to trigger `nzbgeek-classical-lossless`.
+- Ask to draft or post an SWSD incident comment to trigger `swsd-comment-style`.
 
 ## Adding a Skill
 
